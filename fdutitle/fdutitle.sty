@@ -1,0 +1,58 @@
+\ProvidesPackage{fdutitle}[]
+\RequirePackage{fdulogo}
+
+
+\def\myid{}
+\newcommand{\id}[1]{
+    \def\myid{#1}
+}
+
+\def\mymajor{}
+\newcommand{\major}[1]{
+    \def\mymajor{#1}
+}
+
+\def\mycourse{}
+\newcommand{\course}[1]{
+    \def\mycourse{#1}
+}
+
+\newcommand{\makefdutitle}{
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\begin{titlepage}
+\begin{center}
+
+% Upper part of the page
+\quad \\[1.5cm]
+\scalebox{0.35}{\fduname}
+\\[1.5cm]
+
+\textsc{\Huge \mycourse }\\[1.5cm]
+
+\resizebox{0.22\textwidth}{0.22\textwidth}{\fduemblem+}
+\\[1.5cm]
+
+
+\vfill
+% Bottom of the page
+
+
+{\Large
+\begin{tabular}{cp{10cm}<{\centering}}
+    设计课题：& \thetitle \\
+    \cline{2-2}
+    专\,\,\,\,\,\,\,\,\,\,\,\,业：& \mymajor \\
+    \cline{2-2}
+    姓\,\,\,\,\,\,\,\,\,\,\,\,名：& \theauthor \\
+    \cline{2-2}
+    学\,\,\,\,\,\,\,\,\,\,\,\,号：& \myid \\
+    \cline{2-2}
+\end{tabular}\\[1.5cm]
+}
+
+{\large \thedate}
+
+\end{center}
+
+\end{titlepage}
+}
